@@ -5,6 +5,9 @@ import { Roboto } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
+import HeaderSection from "@/components/core/header"
+import FooterSection from "@/components/core/footer"
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -34,8 +37,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${poppins.variable} ${roboto.variable}`}>
         <Suspense fallback={null}>
+          <HeaderSection />
           {children}
           <Analytics />
+          <FooterSection />
         </Suspense>
       </body>
     </html>
